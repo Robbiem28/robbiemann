@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Robbie Mann — Realtor® | JB Elite Group Realty</title>
+  <meta name="description" content="Robbie Mann, Realtor® since 2012. Helping investors, builders, and first-time buyers across Metro Vancouver." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0c;
+      --card: #111;
+      --text: #eaeaea;
+      --muted: #b3b3b3;
+      --line: #1e1e1e;
+      --accent: #ffffff;
+      --maxw: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg); color: var(--text);
+      font-family: "Inter", sans-serif;
+    }
+    a { color: var(--text); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .topbar {
+      position: sticky; top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      background: rgba(12,12,12,0.8);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+    .brand-mark {
+      width: 34px; height: 34px;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      display: grid; place-items: center;
+      font-weight: 800;
+    }
+    .menu { display: flex; gap: 20px; align-items: center; }
+    .menu a { font-weight: 600; color: var(--muted); }
+    .menu a:hover, .menu a.active { color: var(--text); }
+    .menu .btn {
+      padding: 8px 16px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) brightness(0.55);
+    }
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 100px 20px 60px;
+    }
+    h1 {
+      font-size: clamp(32px, 6vw, 60px);
+      margin: 6px 0 12px;
+    }
+    .sub { color: var(--muted); font-size: 18px; max-width: 700px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+    .btn {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: var(--bg);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    /* Sections */
+    section { max-width: var(--maxw); margin: 0 auto; padding: 80px 20px; border-top: 1px solid var(--line); }
+    h2 { font-size: 32px; margin-bottom: 10px; }
+    .lead { color: var(--muted); max-width: 900px; font-size: 18px; }
+
+    /* Contact form */
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    label { color: var(--muted); font-size: 14px; }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      background: #0e0e0e;
+      border: 1px solid var(--line);
+      color: var(--text);
+      border-radius: 8px;
+    }
+    textarea { min-height: 120px; grid-column: 1 / -1; }
+    .full { grid-column: 1 / -1; }
+    .form-foot { display: flex; align-items: center; gap: 10px; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--line); }
+    .foot {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+    .foot small { color: var(--muted); }
+
+    @media (max-width: 800px) {
+      form { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <div class="brand">
+      <div class="brand-mark">RM</div>
+      <div>Robbie Mann Realtor®</div>
+    </div>
+    <div class="menu">
+      <a href="#about" class="active">About</a>
+      <a href="#selling">Selling</a>
+      <a href="#buying">Buying</a>
+      <a href="https://app.homespotter.com/?asr=1&sui=116385711" target="_blank" rel="noopener" class="btn">Download App</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-media">
+    <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1920&auto=format&fit=crop" alt="Luxury home exterior">
+  </div>
+  <div class="hero-overlay">
+    <h1>Clear, Confident Real Estate.</h1>
+    <p class="sub">Since 2012, I’ve helped investors, builders, and first-time buyers succeed in Metro Vancouver with strategy and transparency.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn">Get in Touch</a>
+      <a href="https://app.homespotter.com/?asr=1&sui=116385711" target="_blank" rel="noopener" class="btn">Download App</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <p class="lead">I’m Robbie Mann, Realtor® with JB Elite Group Realty. I’ve built my business helping everyone from first-time buyers to seasoned builders and investors make confident real-estate decisions in Metro Vancouver.</p>
+</section>
+
+<section id="selling">
+  <h2>Selling</h2>
+  <p class="lead">From pricing and marketing to offers and negotiations, I help you sell smarter and faster — with results you can measure.</p>
+</section>
+
+<section id="buying">
+  <h2>Buying</h2>
+  <p class="lead">Buying a home is more than a transaction — it’s a strategy. Whether you’re an investor, a builder, or a first-time buyer, I’ll help you spot opportunities that fit your goals.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="lead">Let’s connect. Fill out this form and I’ll personally get back to you.</p>
+
+  <form action="https://formsubmit.co/info@robbiemann.ca" method="POST">
+    <input type="hidden" name="_subject" value="New lead from RobbieMann.ca">
+    <input type="hidden" name="_template" value="table">
+
+    <div class="full">
+      <label>Name *</label>
+      <input type="text" name="name" required>
+    </div>
+
+    <div>
+      <label>Email *</label>
+      <input type="email" name="email" required>
+    </div>
+
+    <div>
+      <label>Phone *</label>
+      <input type="tel" name="phone" required>
+    </div>
+
+    <div class="full">
+      <label>Address</label>
+      <input type="text" name="address">
+    </div>
+
+    <div class="full">
+      <label>Message</label>
+      <textarea name="message" placeholder="Tell me what you're looking for..."></textarea>
+    </div>
+
+    <div class="full form-foot">
+      <button type="submit" class="btn">Send Message</button>
+    </div>
+  </form>
+</section>
+
+<footer>
+  <div class="foot">
+    <strong>JB Elite Group Realty</strong><br>
+    202-9453 120 St, Delta BC V4C 6S2<br>
+    <a href="tel:+16043285511">(604) 328-5511</a> · 
+    <a href="mailto:info@robbiemann.ca">info@robbiemann.ca</a><br><br>
+    <small>© <span id="year"></span> Robbie Mann. All rights reserved.</small>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
