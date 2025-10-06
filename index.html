@@ -4,22 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Robbie Mann — Realtor® | JB Elite Group Realty</title>
-  <meta name="description" content="Robbie Mann, Realtor® since 2012. Trusted guide for investors, builders, and first-time buyers across Metro Vancouver." />
+  <meta name="description" content="Robbie Mann, Realtor® since 2012. Helping investors, builders, and first-time buyers across Metro Vancouver." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root { --bg:#0c0c0c; --card:#111; --text:#eaeaea; --muted:#b3b3b3; --line:#1e1e1e; --accent:#fff; --maxw:1200px; }
-    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial}
     a{color:var(--text);text-decoration:none} a:hover{text-decoration:underline}
 
     /* header */
-    .topbar{position:sticky;top:0;background:rgba(12,12,12,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+    .topbar{position:sticky;top:0;background:rgba(12,12,12,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:100}
     .nav{max-width:var(--maxw);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700}
     .brand-mark{border:2px solid var(--accent);border-radius:8px;padding:6px 10px}
     .menu{display:flex;gap:18px;align-items:center}
-    .menu a{color:var(--muted);font-weight:600} .menu a:hover,.menu a.active{color:var(--text)}
+    .menu a{color:var(--muted);font-weight:600}
+    .menu a:hover,.menu a.active{color:var(--text)}
     .btn{display:inline-block;background:var(--accent);color:var(--bg);border:1px solid var(--accent);border-radius:999px;padding:10px 16px;font-weight:700}
-    .btn:hover{opacity:.9}
+    .btn:hover{opacity:.92}
 
     /* hero */
     .hero{position:relative;min-height:68vh;display:grid;align-items:end;overflow:hidden}
@@ -52,6 +54,7 @@
 
     footer{border-top:1px solid var(--line);padding:28px 20px;text-align:center;color:var(--muted);font-size:14px}
     @media (max-width:800px){form{grid-template-columns:1fr}}
+    .notice{display:none;margin:12px 0;padding:12px;border:1px solid #1e1e1e;border-radius:10px;background:#0f0f0f}
   </style>
 </head>
 <body>
@@ -156,15 +159,20 @@
   <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
+    <!-- Success notice (shown after redirect) -->
+    <div id="thanks" class="notice">✅ Thanks—your message was sent. I’ll be in touch shortly.</div>
+
     <p class="lead">Tell me a bit about your goals. I’ll follow up personally.</p>
 
-    <!-- This sends to your email via FormSubmit. First time, confirm the email they send you. -->
-    <form action="https://formsubmit.co/info@robbiemann.ca" method="POST">
+    <!-- Sends to Robbie@robbiemann.ca via FormSubmit (email is not displayed anywhere) -->
+    <form action="https://formsubmit.co/Robbie@robbiemann.ca" method="POST">
+      <!-- FormSubmit options -->
       <input type="hidden" name="_subject" value="New lead from robbiemann.ca" />
       <input type="hidden" name="_template" value="table" />
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
       <input type="hidden" name="_captcha" value="true" />
-      <input type="hidden" name="_next" value="#contact" />
+      <input type="hidden" name="_next" value="https://robbiem28.github.io/robbiemann/?sent=1#contact" />
+      <!-- Honeypot (spam trap) -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
       <div class="full">
         <label for="name">Name *</label>
@@ -176,16 +184,15 @@
       </div>
       <div>
         <label for="phone">Phone *</label>
-        <input id="phone" name="phone" type="tel" placeholder="(604) 000-0000" required pattern="[0-9()+\-\s]{7,}" />
+        <input id="phone" name="phone" type="tel" placeholder="(604) 000-0000" required pattern="[0-9()+\\-\\s]{7,}" />
       </div>
-      <div>
+      <div class="full">
         <label for="address">Address</label>
         <input id="address" name="address" type="text" placeholder="Street, City" />
       </div>
-
       <div class="full">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Write your message or questions here..."></textarea>
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Write your message or questions here..." required></textarea>
       </div>
 
       <div class="full form-foot">
@@ -202,6 +209,18 @@
     <small>© <span id="y"></span> Robbie Mann. All rights reserved.</small>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Show thanks bar when redirected back with ?sent=1
+    (function () {
+      const p = new URLSearchParams(location.search);
+      if (p.get('sent') === '1') {
+        const el = document.getElementById('thanks');
+        if (el) el.style.display = 'block';
+        history.replaceState(null, '', location.pathname + location.hash);
+      }
+    })();
+  </script>
 </body>
 </html>
