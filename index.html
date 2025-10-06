@@ -4,8 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Robbie Mann — Realtor® | JB Elite Group Realty</title>
-  <meta name="description" content="Robbie Mann, Realtor® since 2012. Helping investors, builders, and first-time buyers across Metro Vancouver." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Robbie Mann, Realtor® since 2012. Trusted guide for investors, builders, and first‑time buyers across Metro Vancouver." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0c0c0c;
@@ -18,230 +20,231 @@
     }
 
     * { box-sizing: border-box; }
-    html, body {
-      margin: 0; padding: 0;
-      background: var(--bg); color: var(--text);
-      font-family: "Inter", sans-serif;
-    }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+
     a { color: var(--text); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* Header */
-    .topbar {
-      position: sticky; top: 0;
-      z-index: 50;
-      backdrop-filter: blur(8px);
-      background: rgba(12,12,12,0.8);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 20px;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
-    .brand-mark {
-      width: 34px; height: 34px;
-      border: 2px solid var(--accent);
-      border-radius: 8px;
-      display: grid; place-items: center;
-      font-weight: 800;
-    }
-    .menu { display: flex; gap: 20px; align-items: center; }
-    .menu a { font-weight: 600; color: var(--muted); }
-    .menu a:hover, .menu a.active { color: var(--text); }
-    .menu .btn {
-      padding: 8px 16px;
-      border: 1px solid var(--accent);
-      background: var(--accent);
-      color: var(--bg);
-      border-radius: 999px;
-      font-weight: 700;
-    }
+    .topbar { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px); background: rgba(12,12,12,0.7); border-bottom: 1px solid var(--line); }
+    .nav { max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; }
+    .brand { display: flex; align-items: center; gap: 14px; font-weight: 700; letter-spacing: 0.6px; }
+    .brand-mark { width: 34px; height: 34px; border: 2px solid var(--accent); border-radius: 10px; display: grid; place-items: center; font-weight: 800; }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      min-height: 70vh;
-      display: grid;
-      align-items: end;
-      overflow: hidden;
-    }
-    .hero-media {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-    }
-    .hero-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(100%) brightness(0.55);
-    }
-    .hero-overlay {
-      position: relative;
-      z-index: 2;
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 100px 20px 60px;
-    }
-    h1 {
-      font-size: clamp(32px, 6vw, 60px);
-      margin: 6px 0 12px;
-    }
-    .sub { color: var(--muted); font-size: 18px; max-width: 700px; }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-    .btn {
-      display: inline-block;
-      border: 1px solid var(--accent);
-      background: var(--accent);
-      color: var(--bg);
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-    }
+    .menu { display: flex; gap: 22px; align-items: center; }
+    .menu a { color: var(--muted); font-weight: 500; }
+    .menu a.active, .menu a:hover { color: var(--text); }
+    .menu .btn { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--accent); background: var(--accent); color: var(--bg); font-weight: 700; letter-spacing: 0.3px; }
 
-    /* Sections */
+    .hero { position: relative; min-height: 70vh; display: grid; align-items: end; }
+    .hero-media { position: absolute; inset: 0; overflow: hidden; z-index: 1; pointer-events: none; }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.1) brightness(0.55); transform: scale(1.05); }
+    .hero-overlay { position: relative; z-index: 2; max-width: var(--maxw); margin: 0 auto; padding: 100px 20px 64px; }
+    .kicker { color: var(--muted); text-transform: uppercase; letter-spacing: 2px; font-size: 12px; }
+    h1 { font-size: clamp(32px, 6vw, 64px); margin: 6px 0 12px; line-height: 1.06; }
+    .sub { color: var(--muted); font-size: clamp(14px, 2vw, 18px); max-width: 720px; }
+    .cta-row { display: flex; gap: 14px; margin-top: 22px; flex-wrap: wrap; }
+
+    .btn { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--accent); color: var(--bg); background: var(--accent); padding: 12px 16px; border-radius: 999px; font-weight: 600; letter-spacing: 0.3px; }
+    .btn.ghost { background: transparent; color: var(--text); border-color: var(--text); }
+
     section { max-width: var(--maxw); margin: 0 auto; padding: 80px 20px; border-top: 1px solid var(--line); }
-    h2 { font-size: 32px; margin-bottom: 10px; }
+    h2 { font-size: clamp(24px, 3.6vw, 40px); margin: 0 0 10px; }
     .lead { color: var(--muted); max-width: 900px; font-size: 18px; }
 
-    /* Contact form */
-    form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 20px;
-    }
-    label { color: var(--muted); font-size: 14px; }
-    input, textarea, select {
-      width: 100%;
-      padding: 12px;
-      background: #0e0e0e;
-      border: 1px solid var(--line);
-      color: var(--text);
-      border-radius: 8px;
-    }
-    textarea { min-height: 120px; grid-column: 1 / -1; }
-    .full { grid-column: 1 / -1; }
-    .form-foot { display: flex; align-items: center; gap: 10px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; margin-top: 36px; }
+    .col-6 { grid-column: span 6; }
+    .col-4 { grid-column: span 4; }
+    .col-8 { grid-column: span 8; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+    .card .pad { padding: 20px; }
+    .figure { height: 260px; overflow: hidden; }
+    .figure img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); }
 
-    /* Footer */
+    .pill { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; color: var(--muted); font-size: 12px; letter-spacing: 0.4px; text-transform: uppercase; }
+
+    .app-promo { background: #0f0f0f; border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: flex; gap: 20px; align-items: center; }
+    .app-promo img.logo { height: 44px; width: auto; filter: grayscale(100%) invert(1); opacity: 0.95; }
+
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    label { font-size: 14px; color: var(--muted); margin-bottom: 6px; display: inline-block; }
+    input, textarea { width: 100%; padding: 14px 14px; background: #0e0e0e; border: 1px solid var(--line); color: var(--text); border-radius: 12px; outline: none; }
+    textarea { min-height: 140px; resize: vertical; grid-column: 1 / -1; }
+    .full { grid-column: 1 / -1; }
+    .form-foot { display: flex; gap: 12px; align-items: center; }
+    .disclaimer { color: var(--muted); font-size: 12px; }
+
     footer { border-top: 1px solid var(--line); }
-    .foot {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 30px 20px;
-    }
+    .foot { max-width: var(--maxw); margin: 0 auto; padding: 32px 20px; display: grid; gap: 10px; }
     .foot small { color: var(--muted); }
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
+      .col-6, .col-4, .col-8 { grid-column: 1 / -1; }
       form { grid-template-columns: 1fr; }
+      .hero { min-height: 62vh; }
     }
   </style>
 </head>
 <body>
+  <header class="topbar" aria-label="Site Navigation">
+    <nav class="nav">
+      <a class="brand" href="#home" aria-label="Robbie Mann Home">
+        <span class="brand-mark" aria-hidden="true">RM</span>
+        <span>Robbie Mann <span class="mono">Realtor®</span></span>
+      </a>
+      <div class="menu" role="navigation">
+        <a href="#about" class="active">About</a>
+        <a href="#selling">Selling</a>
+        <a href="#buying">Buying</a>
+        <a class="btn" href="https://app.homespotter.com/?asr=1&sui=116385711" target="_blank" rel="noopener">Download App</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<header class="topbar">
-  <nav class="nav">
-    <div class="brand">
-      <div class="brand-mark">RM</div>
-      <div>Robbie Mann Realtor®</div>
+  <section id="home" class="hero" aria-label="Hero">
+    <div class="hero-media" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1920&auto=format&fit=crop" alt="Contemporary luxury home exterior" />
     </div>
-    <div class="menu">
-      <a href="#about" class="active">About</a>
-      <a href="#selling">Selling</a>
-      <a href="#buying">Buying</a>
-      <a href="https://app.homespotter.com/?asr=1&sui=116385711" target="_blank" rel="noopener" class="btn">Download App</a>
-      <a href="#contact">Contact</a>
+    <div class="hero-overlay">
+      <div class="kicker">JB Elite Group Realty</div>
+      <h1>Clear, Confident Real Estate.</h1>
+      <p class="sub">Since 2012, I’ve helped <strong>investors</strong>, <strong>builders</strong>, and <strong>first‑time buyers</strong> win in Metro Vancouver. Strategy first, pressure never.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn">Get in touch</a>
+        <a href="https://app.homespotter.com/?asr=1&sui=116385711" class="btn" target="_blank" rel="noopener">Download App</a>
+      </div>
     </div>
-  </nav>
-</header>
+  </section>
 
-<section class="hero">
-  <div class="hero-media">
-    <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1920&auto=format&fit=crop" alt="Luxury home exterior">
-  </div>
-  <div class="hero-overlay">
-    <h1>Clear, Confident Real Estate.</h1>
-    <p class="sub">Since 2012, I’ve helped investors, builders, and first-time buyers succeed in Metro Vancouver with strategy and transparency.</p>
-    <div class="cta-row">
-      <a href="#contact" class="btn">Get in Touch</a>
-      <a href="https://app.homespotter.com/?asr=1&sui=116385711" target="_blank" rel="noopener" class="btn">Download App</a>
+  <section id="app">
+    <h2>Use My Free App</h2>
+    <p class="lead">Search for homes across Canada, get real‑time alerts, save favourites, and message me directly. Tap <strong>Download App</strong> to get started.</p>
+    <div class="app-promo">
+      <!-- Optional: add HomeSpotter logo here -->
+      <!-- <img class="logo" src="PUT_HOMESPOTTER_LOGO_URL_HERE" alt="HomeSpotter logo"> -->
+      <div class="cta-row">
+        <a href="https://app.homespotter.com/?asr=1&sui=116385711" target="_blank" rel="noopener" class="btn">Download App</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="about">
-  <h2>About</h2>
-  <p class="lead">I’m Robbie Mann, Realtor® with JB Elite Group Realty. I’ve built my business helping everyone from first-time buyers to seasoned builders and investors make confident real-estate decisions in Metro Vancouver.</p>
-</section>
+  <section id="about" aria-label="About Robbie Mann">
+    <h2>About</h2>
+    <p class="lead">I’m Robbie Mann, a Realtor® with a track record since 2012 across Delta, Surrey, and the broader Metro Vancouver region. My practice balances investor‑grade analysis with builder relationships and hands‑on guidance for first‑time buyers.</p>
+    <div class="grid">
+      <article class="card col-6">
+        <div class="figure">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop" alt="Minimal, high‑contrast kitchen interior" />
+        </div>
+        <div class="pad">
+          <span class="pill">Experience</span>
+          <h3>Since 2012</h3>
+          <p>Hundreds of consultations spanning resale, new construction, and presales. I speak the language of investors and builders—without losing sight of liveability.</p>
+        </div>
+      </article>
 
-<section id="selling">
-  <h2>Selling</h2>
-  <p class="lead">From pricing and marketing to offers and negotiations, I help you sell smarter and faster — with results you can measure.</p>
-</section>
-
-<section id="buying">
-  <h2>Buying</h2>
-  <p class="lead">Buying a home is more than a transaction — it’s a strategy. Whether you’re an investor, a builder, or a first-time buyer, I’ll help you spot opportunities that fit your goals.</p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p class="lead">Let’s connect. Fill out this form and I’ll personally get back to you.</p>
-
-  <form action="https://formsubmit.co/info@robbiemann.ca" method="POST">
-    <input type="hidden" name="_subject" value="New lead from RobbieMann.ca">
-    <input type="hidden" name="_template" value="table">
-
-    <div class="full">
-      <label>Name *</label>
-      <input type="text" name="name" required>
+      <article class="card col-6">
+        <div class="figure">
+          <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1600&auto=format&fit=crop" alt="Architectural exterior with striking lines" />
+        </div>
+        <div class="pad">
+          <span class="pill">Approach</span>
+          <h3>Strategy, Not Hype</h3>
+          <p>I prioritize data, negotiation, and timing. Clear options, transparent risks, and a plan tailored to you.</p>
+        </div>
+      </article>
     </div>
+  </section>
 
-    <div>
-      <label>Email *</label>
-      <input type="email" name="email" required>
+  <section id="selling">
+    <h2>Selling</h2>
+    <p class="lead">From pre‑listing prep to polished marketing and negotiation, I position your property to compete at the top of the market.</p>
+    <div class="grid">
+      <div class="card col-8">
+        <div class="figure">
+          <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1600&auto=format&fit=crop" alt="Luxury living room staged in monochrome" />
+        </div>
+        <div class="pad">
+          <h3>Premium Presentation</h3>
+          <p>High‑end photography, floorplans, and copy that sells the lifestyle. Placement across MLS® and targeted channels.</p>
+        </div>
+      </div>
+      <div class="card col-4">
+        <div class="pad">
+          <h3>What You Get</h3>
+          <ul>
+            <li>Pricing strategy & comps</li>
+            <li>Staging guidance</li>
+            <li>Pro photography & tours</li>
+            <li>Negotiation & offer vetting</li>
+            <li>Weekly reporting</li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div>
-      <label>Phone *</label>
-      <input type="tel" name="phone" required>
+  <section id="buying">
+    <h2>Buying</h2>
+    <p class="lead">Whether it’s your first home or next project, I’ll help you evaluate value, risk, and upside—then move decisively.</p>
+    <div class="grid">
+      <div class="card col-4">
+        <div class="pad">
+          <h3>First‑Time Buyers</h3>
+          <p>Budget to keys: mortgage prep, neighbourhood fits, and step‑by‑step support.</p>
+        </div>
+      </div>
+      <div class="card col-4">
+        <div class="pad">
+          <h3>Investors</h3>
+          <p>Cash flow, cap rates, and exit planning. Numbers first, always.</p>
+        </div>
+      </div>
+      <div class="card col-4">
+        <div class="pad">
+          <h3>Builders</h3>
+          <p>Land, entitlement, and product strategy—sourced and negotiated with your metrics in mind.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="full">
-      <label>Address</label>
-      <input type="text" name="address">
-    </div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="lead">Tell me a bit about your goals. I’ll follow up personally.</p>
+    <form action="https://formsubmit.co/info@robbiemann.ca" method="POST">
+      <input type="hidden" name="_subject" value="New lead from robbiemann.ca" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" name="_captcha" value="true" />
+      <input type="hidden" name="_next" value="#contact" />
 
-    <div class="full">
-      <label>Message</label>
-      <textarea name="message" placeholder="Tell me what you're looking for..."></textarea>
-    </div>
-
-    <div class="full form-foot">
-      <button type="submit" class="btn">Send Message</button>
-    </div>
-  </form>
-</section>
-
-<footer>
-  <div class="foot">
-    <strong>JB Elite Group Realty</strong><br>
-    202-9453 120 St, Delta BC V4C 6S2<br>
-    <a href="tel:+16043285511">(604) 328-5511</a> · 
-    <a href="mailto:info@robbiemann.ca">info@robbiemann.ca</a><br><br>
-    <small>© <span id="year"></span> Robbie Mann. All rights reserved.</small>
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
+      <div class="full">
+        <label for="name">Name *</label>
+        <input id="name" name="name" type="text" placeholder="Your full name" required />
+      </div>
+      <div>
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+      </div>
+      <div>
+        <label for="phone">Phone *</label>
+        <input id="phone" name="phone" type="tel" placeholder="(604) 000-0000" required pattern="[0-9()+\-\s]{7,}" />
+      </div>
+      <div>
+        <label for="address">Address</label>
+        <input id="address" name="address" type="text" placeholder="Street, City" />
+      </div>
+      <div>
+        <label for="topic">Interested In</label>
+        <select id="topic" name="topic" style="width:100%; padding:14px; background:#0e0e0e; border:1px solid var(--line); color:var(--text); border-radius:12px;">
+          <option value="Buying">Buying</option>
+          <option value="Selling">Selling</option>
+          <option value="Investing">Investing</option>
+          <option value="Building">Building</option>
+          <option value="General">General</option>
+        </select>
+      <div class="full">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message or questions here..."></textarea>
+      </div>
